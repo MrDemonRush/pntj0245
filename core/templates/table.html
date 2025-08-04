@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+</head>
+<body>
+  <h1>Records list</h1>
+  <table id="records">
+    <thead>
+      <tr><th>Name</th><th>Date</th></tr>
+    </thead>
+    <tbody>
+      {% for r in records %}
+        <tr><td>{{ r.name }}</td><td>{{ r.date }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#records').DataTable();
+    });
+  </script>
+</body>
+</html>
